@@ -1,0 +1,440 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --tipo-letra: "nunito", Helvetica, arial, sans-sarif;
+    --verde-escuro: #049A40;
+    --verde-claro: #0BF96A;
+    --rosa-escuro: #E10BF9;
+    --rosa-claro: #F3A0FD;
+    --branco: #fff;
+    --preto: black;
+}
+
+body{
+    background-color: var(--branco);
+    font-family: var(--tipo-letra);
+}
+
+a {
+    text-decoration: none;
+    color: var(--preto);
+}
+
+.menu-bg{
+    background-color: var(--verde-claro);
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.menu_logo{
+    margin: 10px;
+}
+
+.nav_lista{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.nav_link{
+    padding: 20px 10px;
+}
+
+.intro{
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0 auto;
+    padding: 25px 0;
+}
+
+hr{
+    border: none;
+    background-color: var(--rosa-escuro);
+    height: 2px;
+    width: 140px;
+    margin: 20px auto;
+}
+
+/*Quem somos*/
+
+p{
+    line-height: 21.82px; /*espaçamento entre paragrafos*/
+    padding: 0 10px;
+}
+
+.sessao_titulo{
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.somos{
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.somos_corpo{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/*essa é uma propriedade do flexbox de modo a controlar o tamanho dos elementos filhos. 
+O valor 6 pertence a propriedade flexgrow:6; flex-shrink: 1; e o flex-basics: 160px;*/
+
+.somos_texto{
+    flex: 6 1 160px;   /*quando colocarmos flex-grow: 6, estamos a 
+    dizer que o texto deve ser, 6 vezes maior que os outros itens do elemento pai.*/
+}
+
+.somos_imagem{
+    flex: 1 1 350px;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+/* Nossos cursos 
+
+No elemento pai, aplicamos um display:flex; de modo que os elementos filhos ficam de forma 
+de linha e não de coluna. */
+
+.curso_corpo{
+    display: flex; /* alinhamento dos itens no contener curso_corpo*/
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*Diminuímos também a largura dos cursos. E fizemos a separação 
+entre os elementos. */
+.curso{
+    width: 280px;
+    margin: 0 20px;
+}
+
+.curso__titulo{
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 10px 0 5px 0;
+}
+
+.planos_corpo{
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+ul{
+    list-style: none;
+}
+
+/* section planos recebe a coloração rosa escuro*/
+.planos{
+    background-color: var(--rosa-claro);
+}
+
+.plano{
+    width: 290px;
+    margin: 10px;
+    border: 2px solid var(--verde-claro);
+}
+
+.plano__titulo{
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.plano__preco{
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.plano__preco sup{
+     font-size: 1.5rem;
+     top: -20px;
+}
+
+.plano_divisor {
+    background-color: var(--verde-claro);
+    width: 20px;
+    margin: 5px auto;
+}
+
+.plano-lista{
+    max-width: 195px;
+    margin: 0 auto;
+}
+
+.plano-lista__item{
+    margin: 10px 0;
+    font-family: italic;
+}
+
+
+/*Insira algo antes do conteúdo de 
+    cada elemento.*/
+
+.plano-lista__item::before{    
+    content: "";
+    display: flex;
+    width: 5px;
+    height: 5px;
+    background-color: var(--verde-claro);
+    border-radius: 5px;
+    margin-left: -15px;
+}
+
+.plano__btn-comprar{
+    display: block;
+    max-width: 180px;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 15px auto;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid var(--verde-claro);
+}
+
+/*: last-child Seleciona todos os elementos que é o último filho do seu 
+    elemento pai.*/ 
+
+.plano:last-child{   
+    background-color: var(--verde-claro);
+}
+
+.vantagens {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+.vantagem{
+    max-width: 240px;
+    margin: 10px;
+}
+
+.vantagem__titulo{
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.vantagem__titulo::before{
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.vantagem:nth-of-type(3n+1) .vantagem__titulo::before{
+    background-color: var(--verde-claro);
+}
+
+.vantagem:nth-of-type(3n+2) .vantagem__titulo::before{
+    background-color: var(--rosa-escuro);
+}
+
+.vantagem:nth-of-type(3n+3) .vantagem__titulo::before{
+    background-color: var(--verde-escuro);
+}
+
+/* Newsletter*/
+
+.newsletter{
+    background-color: var(--verde-claro);
+}
+
+.newsletter-container{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.newsletter-info{
+    padding-left: 10px;
+    flex: 1 1 260px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.newsletter-form{
+ flex: 2 1 260px;
+ display: flex;
+ flex-wrap: wrap;
+}
+
+.newsletter-info__titulo{
+    font-size: 2.62rem;
+    font-weight: bold;
+}
+
+.newsletter-info__description{
+    font-style: italic;
+}
+
+.newsletter-form_input{
+    flex: 3 1 260px;
+    font-size: 1.5rem;
+    width: 325px;
+    color: block;
+    font-style: italic;
+    font-family: var(--tipo-letra);
+    border: 10px solid var(--rosa-escuro);
+    padding: 10px;
+    margin: 0;
+    border-radius: 0px;
+}
+
+.newsletter-form_submit{
+    width: 192px;
+    font-family: var(--tipo-letra);
+    font-size: 2.25rem;
+    font-weight: bold;
+    text-transform : uppercase;
+    background: var(--rosa-escuro);
+    color: black;
+    cursor: pointer;
+    border: none;
+    padding: 15px;
+}
+
+.footer{
+    background-color: var(--rosa-claro);
+    display: flex;
+    justify-content: space-around;
+    padding: 55px calc((100% - 960px)/2);
+}
+
+.footer__copyright, .footer__logo{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* JavaScript */
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+.menu_logo{
+    display: flex;
+    align-items: center;
+}
+
+.menu_logo h1 {
+    color: #fff;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+}
+
+.nav .nav_lista {
+    display: flex;
+}
+
+.nav-item{
+    margin: 0 15px;
+}
+
+.nav-link{
+    text-decoration: nome;
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 400;
+}
+
+/*Nesse código a única coisa nova é só a classe .mobile-menu-icon e o .mobile-menu
+que tem como propriedade display: none; de modo que o  icon menu não seja 
+mostrado enquanto estiver em tela cheia.*/
+
+.mobile-menu-icon{
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media screen and (max-width: 730px){
+    .nav-bar{
+        padding: 1.5rem 4rem;
+    }
+
+    .nav-item{
+        display: none;
+    }
+
+    .Login-button{
+        display: none;
+    }
+
+    .mobile-menu-icon{
+        display: block;
+    }
+
+    .mobile-menu-icon button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .mobile-menu .nav-item{
+        display: block;
+        padding: 1rem 2rem;
+
+    }
+
+    .mobile-menu .Login-button button{
+        width: 100%;
+    }
+
+    .open {
+        display: block;
+    }
+
+    .vantagens {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+    }
+    
+    
+}
